@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/485fa11d9e.js" crossorigin="anonymous"></script>
+	<title>Booking Form</title>
+	<script>
+		function validateForm() {
+			if (isEmpty(document.getElementById('data_3').value.trim())) {
+				alert('First name is required!');
+				return false;
+			}
+			if (isEmpty(document.getElementById('data_4').value.trim())) {
+				alert('Last name is required!');
+				return false;
+			}
+			if (!validateEmail(document.getElementById('data_5').value.trim())) {
+				alert('Email must be a valid email address!');
+				return false;
+			}
+			return true;
+		}
+		function isEmpty(str) { return (str.length == 0 || !str.trim()); }
+		function validateEmail(email) {
+			var re = "";
+			return isEmpty(email) || re.test(email);
+		}
+	</script>
+    <style>
+        body{
+	margin:0;
+	padding:0px;
+	background:url(../images//background//abcd.jpg) no-repeat;
+	height: 90.8vh;
+	background-size: 100% 100%;
+	text-align: center;
+}
+body h1{
+	margin-top: 7%; 
+}
+.container{
+	width: 40%;
+	height: 80%;
+	margin-top: 20px;
+    margin-left: 380px;
+	padding: 40px;
+    border: 2px solid white;
+    backdrop-filter: blur(40px)
+}
+.textbox
+{
+	width:100%;
+	overflow:hidden;
+	font-size:20px;
+	padding:20px 0;
+}
+.textbox input {
+	border:2px solid #000;
+	border-radius: 5px;
+	outline:none;
+	background: white;
+	color:black;
+	font-size:18px;
+	width: 50%;
+	height: 30px;
+
+	
+}
+.textbox input::placeholder{
+	color: black;
+}
+.btn input{
+	margin-top: 10px;
+	width: 50%;
+	height: 40px;
+	border-radius: 8px;
+	transition: 0.6s ease;
+}
+.btn input:hover{
+	background-color: #FB4A0A;
+}
+.main{
+  overflow: hidden;
+  position: fixed;
+  background-color: rgba(135,206,250,0.4);
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+  max-width: 1550px;
+}
+
+ul{
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+ul li{
+  display: inline;
+}
+
+.list{
+  position: fixed;
+  display: block;
+  top: 9px;
+  float: left;
+}
+
+.list li.logo img{
+  position: relative;
+  float: left;
+  top: -20px;
+  margin-left: -5%;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+
+}
+.search{
+  display: inline;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.search input[type=text]{
+  position: relative;
+  float: left;
+  top:-18px;
+  left: 5%;
+  padding: 6px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: 1px solid #0000ff;
+  transition: 0.6s ease;
+}
+
+.search input[type=text]:hover{
+  background-color: #dcdcdc;
+}
+
+
+.list input[type=image]{
+  position: relative;
+  float: right;
+  top:-50px;
+  left: 2%;
+  margin-left: 20%; 
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #00f;
+  transition: 0.6s ease;
+  background-color: #fff;
+}
+
+.list input[type=image]:hover{
+  background-color: #739ac5;
+}
+
+.list2{
+  position: relative;
+  top: -20px;
+  float: right;
+}
+
+.list2 li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.9s ease;
+}
+
+.list2 li a:hover{
+  background-color: #fff;
+  color: #000;
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    </style>
+</head>
+<body>
+	<div class="main">
+		<ul>
+			<ul class="list">
+			<li class="logo"><a href="mainPage.html"><img src="earth-globe.jpg" alt="Logo" style="width:36px;height:36px"></a></li>
+			<div class="search">
+                <form method="POST" action="info.php">
+                  <input type="text" name="search_p" placeholder="Search.." size="50">
+              
+                  <input type="image" name="submit_p" src="search_icon.jpg" alt="Search image" style="width:22;height:22; margin-left: 35px;">
+                </form>
+            </div>
+			</ul>
+			<ul class="list2">
+			<li><a href="mainpage.html">Home</a></li>
+			<li><a id="long" href="destination.html">Destination</a></li>
+			<li><a href="gallery.html">Gallery</a></li>
+			<li class="active-menu"><a href="booking.html">Book Tour</a></li>
+			<li><a href="feedback.html">Feedback</a></li>
+			<li><a href="index.html">Logout</a></li>
+			</ul>
+		</ul>
+	</div>
+	<h1>Tour Booking</h1>
+	<div class="container">
+		<form  name="form">
+			<div class="textbox">
+				<input type="text" placeholder="First Name" name="ffname" id="ffname" value=""  onkeypress="return /[a-zA-Z]/i.test(event.key)" required>  
+			</div>
+
+			<div class="textbox">
+				<input type="text" placeholder="Last Name" name="flast" id="flast" value="" onkeypress="return /[a-zA-Z]/i.test(event.key)" required> 
+			</div>
+
+			<div class="textbox">
+				<input type="text" placeholder="Email" name="femail" id="femail" value="" required pattern="[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+.[a-z]{2,4}" title="Invalid Email">
+			</div>
+
+			<div class="textbox">
+				<input type="text" placeholder="City" name="city" id="city" value="" onkeypress="return /[a-zA-Z]/i.test(event.key)" required>
+			</div>
+
+			<div class="textbox">
+				<input type="text" placeholder="Phone" name="fphone" id="fphone" value="" onkeypress="return /[0-9]/i.test(event.key)" maxlength="10" pattern="([0-9]){10,}" required>
+			</div>
+
+			<div class="textbox">
+				<input type="text" placeholder="Destination" name="fdesti" id="fdesti" value="" required>
+			</div>
+			<div class="btn">
+				<input name="submit" value="Submit" type="submit" formaction="/book">
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
