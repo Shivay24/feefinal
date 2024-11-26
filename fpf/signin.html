@@ -39,9 +39,16 @@
 	margin:0;
 	padding:0;
 	font-family:sans-serif;
-	background:url(images/background/eiffel2.jpg) no-repeat;
+	background:url(images/background/eiffel2.jpg);
 	height: 100vh;
 	background-size: 100% 100%;	
+}
+.abcd{
+    background-image: url(../fpf/images/darkred.jpg);
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    opacity: 60%;
 }
 .login-box
 
@@ -222,12 +229,7 @@ ul li{
   background-color: #fff;
   color: #000;
 }
-.abcd{
-    background-image: url(../fpf/images/darkred.jpg);
-    width: 70px;
-    height: 70px;
-    background-size: contain;
-    opacity: 60%;
+
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
@@ -237,11 +239,11 @@ ul li{
 
 
 <body>
+  <a href="index.html"><div class="abcd"> <i class="fa-solid fa-arrow-left fa-3x"></i></div></a>
+    
 
   <form from="myForm" >
-    <a href="index.html"><div class="abcd">
-     
-    </div></a>
+    
 
 
     <div class="login-box">

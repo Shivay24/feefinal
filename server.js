@@ -95,7 +95,7 @@ app.get("/book",function(req,resp){
         if(err==null)
         {
            
-         resp.send("thnku sir");
+         resp.send("congratulations!! Your request has been send and will be updated very soon");
 
         }
         else
